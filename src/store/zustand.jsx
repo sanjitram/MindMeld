@@ -4,7 +4,7 @@ import { Question } from "../constant"; // Import local questions
 
 const useQuestionStore = create(
   persist(
-    (set) => ({
+    (set, get) => ({
       question: [],
       userAnswer: [],
       error: null,
@@ -13,6 +13,7 @@ const useQuestionStore = create(
       falseAnswer: 0,
       auth: {},
       page: 1,
+      scoreHistory: [], // Add this new state
       fetchQuestion: (query) => {
         try {
           // Parse query parameters
@@ -61,6 +62,7 @@ const useQuestionStore = create(
           falseAnswer: 0,
           error: null,
           page: 1,
+          // Notice we don't reset scoreHistory
         })),
       setTimeStamp: (time) =>
         set((state) => ({
@@ -72,6 +74,27 @@ const useQuestionStore = create(
           ...state,
           page: state.page + 1,
         })),
+      saveScore: () => {
+        const { trueAnswer, falseAnswer, question } = get();
+        const score = {
+          score: (trueAnswer * 100) / 5,
+          category: question[0]?.category,
+          difficulty: question[0]?.difficulty,
+          date: new Date().toISOString(),
+          correct: trueAnswer,
+          wrong: falseAnswer
+        };
+        
+        set(state => ({
+          ...state,
+          scoreHistory: [...state.scoreHistory, score]
+        }));
+      },
+      clearHistory: () =>
+        set(state => ({
+          ...state,
+          scoreHistory: []
+        }))
     }),
     {
       name: "question-storage",
