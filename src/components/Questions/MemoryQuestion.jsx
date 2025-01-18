@@ -7,7 +7,7 @@ function MemoryQuestion({ id, singleQuestion, handleClick }) {
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
-    // Show words for 3 seconds before displaying options
+    
     const timer = setTimeout(() => {
       setShowWords(false);
       setOptions(
