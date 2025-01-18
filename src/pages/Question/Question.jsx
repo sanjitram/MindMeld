@@ -2,9 +2,31 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import useQuestionStore from "../../store/zustand";
 import AnimateProvider from "../../components/AnimateProvider/AnimateProvider";
+import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+
+// Register Chart.js components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 function Question() {
-  const { fetchQuestion, question: questionData } = useQuestionStore();
+  const { fetchQuestion, question: questionData, scoreHistory } = useQuestionStore();
   const { search } = useLocation();
   const navigate = useNavigate();
 
@@ -16,8 +38,64 @@ function Question() {
 
   if (!questionData.length) return <p>Loading...</p>;
 
+  // Separate scores by category
+  const memoryScores = scoreHistory.filter(score => score.category === "Memory");
+  const attentionScores = scoreHistory.filter(score => score.category === "Attention");
+
+  // Chart configuration
+  const chartData = {
+    labels: scoreHistory.slice(-10).map(score => 
+      new Date(score.date).toLocaleDateString()
+    ),
+    datasets: [
+      {
+        label: 'Memory Tests',
+        data: memoryScores.slice(-10).map(score => score.score),
+        borderColor: '#3B82F6', // Blue
+        backgroundColor: 'rgba(59, 130, 246, 0.5)',
+        tension: 0.3,
+        fill: true,
+      },
+      {
+        label: 'Attention Tests',
+        data: attentionScores.slice(-10).map(score => score.score),
+        borderColor: '#F97316', // Orange
+        backgroundColor: 'rgba(249, 115, 22, 0.5)',
+        tension: 0.3,
+        fill: true,
+      }
+    ]
+  };
+
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' },
+      title: {
+        display: true,
+        text: 'Score History'
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100,
+        title: {
+          display: true,
+          text: 'Score (%)'
+        }
+      },
+      x: {
+        title: {
+          display: true,
+          text: 'Date'
+        }
+      }
+    }
+  };
+
   return (
-    <AnimateProvider className="max-w-xl mx-auto ">
+    <AnimateProvider className="max-w-xl mx-auto">
       <h1 className="text-base md:text-lg font-semibold mb-5 text-orange-900">
         Quizzz Info
       </h1>
@@ -43,6 +121,92 @@ function Question() {
         <div className="flex space-x-5">
           <p className="min-w-[170px]">Time </p>
           <p className="font-bold">3 mins.</p>
+        </div>
+      </div>
+
+      {/* Add average score section */}
+      <div className="mt-8 mb-4 p-4 bg-white rounded-lg shadow">
+        <h3 className="text-lg font-bold mb-2">Recent Performance</h3>
+        {scoreHistory.length > 0 && (
+          <>
+            {(() => {
+              const recentScores = scoreHistory.slice(-10); // Changed from -5 to -10
+              const average = recentScores.reduce((acc, curr) => acc + curr.score, 0) / recentScores.length;
+              
+              const getGrade = (avg) => {
+                if (avg >= 80) return { text: 'Extraordinary', color: '#059669' };
+                if (avg >= 60) return { text: 'Great', color: '#10B981' };
+                if (avg >= 40) return { text: 'Average', color: '#F59E0B' };
+                if (avg >= 20) return { text: 'Bad', color: '#EF4444' };
+                return { text: 'Poor', color: '#991B1B' };
+              };
+
+              const grade = getGrade(average);
+
+              return (
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-sm text-gray-600">
+                      Average of last {recentScores.length} {recentScores.length === 1 ? 'quiz' : 'quizzes'}:
+                    </p>
+                    <p className="text-3xl font-bold mt-1" style={{ color: grade.color }}>
+                      {average.toFixed(1)}%
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm text-gray-600">Grade</p>
+                    <p className="text-2xl font-bold mt-1" style={{ color: grade.color }}>
+                      {grade.text}
+                    </p>
+                  </div>
+                </div>
+              );
+            })()}
+          </>
+        )}
+        {scoreHistory.length === 0 && (
+          <p className="text-sm text-gray-600">
+            Complete your first quiz to see your performance metrics
+          </p>
+        )}
+      </div>
+
+      {/* Add chart section */}
+      <div className="mt-10 w-full bg-white p-4 rounded-lg shadow">
+        <Line data={chartData} options={chartOptions} />
+      </div>
+
+      {/* Add previous scores section */}
+      <div className="mt-10">
+        <h3 className="text-lg font-bold mb-4">Previous Scores</h3>
+        <div className="space-y-4">
+          {scoreHistory.slice().reverse().map((score, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow">
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="font-semibold">{score.category}</p>
+                  <p className="text-sm text-gray-600">
+                    Difficulty: {score.difficulty}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    {new Date(score.date).toLocaleDateString()}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold" 
+                     style={{
+                       color: score.score >= 80 ? '#10b981' : 
+                              score.score >= 60 ? '#F59E0B' : '#dc2626'
+                     }}>
+                    {score.score}%
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    {score.correct} correct, {score.wrong} wrong
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
