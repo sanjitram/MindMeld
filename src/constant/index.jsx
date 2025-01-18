@@ -70,6 +70,33 @@ export const Question = [
   {
     category: "Memory",
     type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date"],
+    correct_answer: "banana",
+    incorrect_answers: ["apple", "cherry", "date"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date"],
+    correct_answer: "banana",
+    incorrect_answers: ["apple", "cherry", "date"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date"],
+    correct_answer: "banana",
+    incorrect_answers: ["apple", "cherry", "date"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
     difficulty: "old",
     question: "What is the square root of 144?",
     correct_answer: "12",
