@@ -11,7 +11,7 @@ function RegisterForm({ isSubmitting: loading }) {
         method="post"
       >
         <h1 className="font-bold text-lg text-neutral-900 mb-5">
-          Let's improve your knowledge
+          Let's analyse your cognitive skills
         </h1>
         <label
           className="text-xs md:text-sm text-neutral-600 font-semibold mb-2"

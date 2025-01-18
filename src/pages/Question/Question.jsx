@@ -13,6 +13,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
+import MidnightTimer from '../../components/MidnightTimer';
 
 // Register Chart.js components
 ChartJS.register(
@@ -41,6 +42,8 @@ function Question() {
   // Separate scores by category
   const memoryScores = scoreHistory.filter(score => score.category === "Memory");
   const attentionScores = scoreHistory.filter(score => score.category === "Attention");
+  const problemSolvingScores = scoreHistory.filter(score => score.category === "Problem Solving");
+  const reactionSpeedScores = scoreHistory.filter(score => score.category === "Reaction speed");
 
   // Chart configuration
   const chartData = {
@@ -63,6 +66,22 @@ function Question() {
         backgroundColor: 'rgba(249, 115, 22, 0.5)',
         tension: 0.3,
         fill: true,
+      },
+      {
+        label: 'Problem Solving Tests',
+        data: problemSolvingScores.slice(-10).map(score => score.score),
+        borderColor: '#22C55E', // Green
+        backgroundColor: 'rgba(34, 197, 94, 0.5)',
+        tension: 0.3,
+        fill: true,
+      },
+      {
+        label: 'Reaction Speed Tests', 
+        data: reactionSpeedScores.slice(-10).map(score => score.score),
+        borderColor: '#8B5CF6', // Violet
+        backgroundColor: 'rgba(139, 92, 246, 0.5)',
+        tension: 0.3,
+        fill: true,
       }
     ]
   };
@@ -70,7 +89,14 @@ function Question() {
   const chartOptions = {
     responsive: true,
     plugins: {
-      legend: { position: 'top' },
+      legend: { 
+        position: 'top',
+        align: 'start',
+        labels: {
+          padding: 20,
+          boxWidth: 30
+        }
+      },
       title: {
         display: true,
         text: 'Score History'
@@ -94,11 +120,23 @@ function Question() {
     }
   };
 
+  const getScoreAdvice = (score) => {
+    if (score >= 90) return "Outstanding! You've mastered this topic. Try increasing the difficulty level!";
+    if (score >= 80) return "Great job! Focus on the few questions you missed to achieve mastery.";
+    if (score >= 70) return "Good progress! Review the topics you're unsure about and try again.";
+    if (score >= 60) return "You're on the right track. Make notes of challenging questions and study those areas.";
+    if (score >= 50) return "Keep going! Consider reviewing the fundamentals before attempting again.";
+    return "Don't give up! Try an easier difficulty level and build your confidence step by step.";
+  };
+
   return (
     <AnimateProvider className="max-w-xl mx-auto">
       <h1 className="text-base md:text-lg font-semibold mb-5 text-orange-900">
-        Quizzz Info
+        Cognitive Analysis
       </h1>
+
+      {/* Add the MidnightTimer component here, before the quiz info */}
+      <MidnightTimer />
 
       <div className="flex flex-col text-gray-900 space-y-3 text-xs md:text-sm">
         <div className="flex space-x-5">
@@ -166,7 +204,7 @@ function Question() {
         )}
         {scoreHistory.length === 0 && (
           <p className="text-sm text-gray-600">
-            Complete your first quiz to see your performance metrics
+            Complete your first test to see your performance metrics
           </p>
         )}
       </div>
@@ -200,8 +238,12 @@ function Question() {
                      }}>
                     {score.score}%
                   </p>
-                  <p className="text-sm text-gray-600">
-                    {score.correct} correct, {score.wrong} wrong
+                  <p className="text-sm mt-1"
+                     style={{
+                       color: score.score >= 80 ? '#10b981' : 
+                              score.score >= 60 ? '#F59E0B' : '#dc2626'
+                     }}>
+                    {getScoreAdvice(score.score)}
                   </p>
                 </div>
               </div>

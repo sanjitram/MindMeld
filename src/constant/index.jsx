@@ -59,90 +59,6 @@ export const Question = [
     incorrect_answers: ["True", "False", "None of the above"]
   },
   {
-    category: "Memory",
-    type: "multiple",
-    difficulty: "toddler",
-    question: "Which word was present before?",
-    words: ["apple", "banana", "cherry", "date"],
-    correct_answer: "banana",
-    incorrect_answers: ["apple", "cherry", "date"]
-  },
-  {
-    category: "Memory",
-    type: "multiple",
-    difficulty: "toddler",
-    question: "Which word was present before?",
-    words: ["apple", "banana", "cherry", "date"],
-    correct_answer: "banana",
-    incorrect_answers: ["apple", "cherry", "date"]
-  },
-  {
-    category: "Memory",
-    type: "multiple",
-    difficulty: "toddler",
-    question: "Which word was present before?",
-    words: ["apple", "banana", "cherry", "date"],
-    correct_answer: "banana",
-    incorrect_answers: ["apple", "cherry", "date"]
-  },
-  {
-    category: "Memory",
-    type: "multiple",
-    difficulty: "toddler",
-    question: "Which word was present before?",
-    words: ["apple", "banana", "cherry", "date"],
-    correct_answer: "banana",
-    incorrect_answers: ["apple", "cherry", "date"]
-  },
-  {
-    category: "Memory",
-    type: "multiple",
-    difficulty: "old",
-    question: "What is the square root of 144?",
-    correct_answer: "12",
-    incorrect_answers: ["14", "10", "16"]
-  },
-  {
-    category: "Attention",
-    type: "multiple",
-    difficulty: "toddler",
-    question: "What is the color of the object in the image?",
-    image: "https://wl-brightside.cf.tsp.li/resize/728x/jpg/ed9/660/53980d548cb101007423d751b0.jpg",
-    correct_answer: "Red",
-    incorrect_answers: ["Blue", "Green", "Yellow"]
-  },
-  {
-    category: "Attention", 
-    type: "multiple",
-    difficulty: "old",
-    question: "What is the chemical symbol for gold?",
-    correct_answer: "Au",
-    incorrect_answers: ["Ag", "Fe", "Cu"]
-  },
-  {
-    category: "Problem Solving",
-    type: "multiple",
-    difficulty: "old", 
-    question: "In which year did World War II end?",
-    correct_answer: "1945",
-    incorrect_answers: ["1944", "1946", "1943"]
-  },
-  {
-    category: "Reaction speed",
-    type: "multiple",
-    difficulty: "toddler",
-    question: "What is the capital city of Japan?",
-    correct_answer: "Tokyo",
-    incorrect_answers: ["Seoul", "Beijing", "Bangkok"]
-  },
-  {
-    category: "Reaction speed",
-    type: "multiple",
-    difficulty: "old",
-    question: "Which is the longest river in the world?",
-    correct_answer: "Nile",
-    incorrect_answers: ["Amazon", "Mississippi", "Yangtze"]
-  },{
     category: "Problem Solving",
     type: "multiple",
     difficulty: "toddler",
@@ -222,6 +138,281 @@ export const Question = [
     question: "What is the next number in the sequence: 3, 6, 9, 12, ...?",
     correct_answer: "15",
     incorrect_answers: ["13", "14", "16"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date", "grape", "melon"],
+    correct_answer: "banana",
+    incorrect_answers: ["carrot", "kiwi", "orange"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date", "grape", "melon"],
+    correct_answer: "date",
+    incorrect_answers: ["lemon", "peach", "plum"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date", "grape", "melon"],
+    correct_answer: "cherry",
+    incorrect_answers: ["pear", "lime", "watermelon"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date", "grape", "melon"],
+    correct_answer: "apple",
+    incorrect_answers: ["papaya", "fig", "coconut"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which word was present before?",
+    words: ["apple", "banana", "cherry", "date", "grape", "melon"],
+    correct_answer: "grape",
+    incorrect_answers: ["plum", "pineapple", "apricot"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Which word was present before?",
+    words: ["technology", "science", "math", "history", "literature", "philosophy", "psychology", "economics"],
+    correct_answer: "literature",
+    incorrect_answers: ["arts", "geography", "sociology"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Which word was present before?",
+    words: ["technology", "science", "math", "history", "literature", "philosophy", "psychology", "economics"],
+    correct_answer: "science",
+    incorrect_answers: ["biology", "chemistry", "art"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Which word was present before?",
+    words: ["technology", "science", "math", "history", "literature", "philosophy", "psychology", "economics"],
+    correct_answer: "economics",
+    incorrect_answers: ["finance", "law", "engineering"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Which word was present before?",
+    words: ["technology", "science", "math", "history", "literature", "philosophy", "psychology", "economics"],
+    correct_answer: "history",
+    incorrect_answers: ["sociology", "political science", "linguistics"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Which word was present before?",
+    words: ["technology", "science", "math", "history", "literature", "philosophy", "psychology", "economics"],
+    correct_answer: "math",
+    incorrect_answers: ["algebra", "calculus", "statistics"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "old",
+    question: "Which word was present before?",
+    words: ["guitar", "piano", "violin", "drums", "saxophone", "trumpet", "clarinet", "harp", "accordion", "flute"],
+    correct_answer: "piano",
+    incorrect_answers: ["banjo", "cello", "organ"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "old",
+    question: "Which word was present before?",
+    words: ["guitar", "piano", "violin", "drums", "saxophone", "trumpet", "clarinet", "harp", "accordion", "flute"],
+    correct_answer: "saxophone",
+    incorrect_answers: ["bass", "trombone", "oboe"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "old",
+    question: "Which word was present before?",
+    words: ["guitar", "piano", "violin", "drums", "saxophone", "trumpet", "clarinet", "harp", "accordion", "flute"],
+    correct_answer: "trumpet",
+    incorrect_answers: ["viola", "clarinet", "harp"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "old",
+    question: "Which word was present before?",
+    words: ["guitar", "piano", "violin", "drums", "saxophone", "trumpet", "clarinet", "harp", "accordion", "flute"],
+    correct_answer: "drums",
+    incorrect_answers: ["marimba", "cymbals", "tambourine"]
+  },
+  {
+    category: "Memory",
+    type: "multiple",
+    difficulty: "old",
+    question: "Which word was present before?",
+    words: ["guitar", "piano", "violin", "drums", "saxophone", "trumpet", "clarinet", "harp", "accordion", "flute"],
+    correct_answer: "violin",
+    incorrect_answers: ["viola", "bassoon", "oboe"]
+  },
+  {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "How many rope hangers are there in the image?",
+    image: "https://wl-brightside.cf.tsp.li/resize/728x/jpg/ed9/660/53980d548cb101007423d751b0.jpg",
+    correct_answer: "4",
+    incorrect_answers: ["2", "1", "3"]
+  },
+  {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which English Alphabet is in the image?",
+    image: "https://www.mentalup.co/img/blog/concentration-test-4.jpg",
+    correct_answer: "M",
+    incorrect_answers: ["N", "S", "K"]
+  },
+    {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "How many differences are there in the given image?",
+    image: "https://img.jagranjosh.com/images/2023/November/3112023/spot-3-differences-in-pug-pictures.webp",
+    correct_answer: "3",
+    incorrect_answers: ["1", "0", "4"]
+  },
+    {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Which is the odd one out in the image?",
+    image: "https://cdn1.vectorstock.com/i/1000x1000/94/65/find-odd-one-out-game-for-kids-worksheet-visual-vector-31769465.jpg",
+    correct_answer: "3",
+    incorrect_answers: ["1", "2", "4"]
+  },
+  {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "toddler",
+    question: "Solve?",
+    image: "https://www.smartbrainpuzzles.com/wp-content/uploads/2020/12/projection-puzzles-fb-version.jpg",
+    correct_answer: "D",
+    incorrect_answers: ["A", "B", "C"]
+  },
+
+//
+
+{
+    category: "Attention",
+    type: "multiple",
+    difficulty: "old",
+    question: "How many rope hangers are there in the image?",
+    image: "https://wl-brightside.cf.tsp.li/resize/728x/jpg/ed9/660/53980d548cb101007423d751b0.jpg",
+    correct_answer: "4",
+    incorrect_answers: ["2", "1", "3"]
+  },
+  {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "old",
+    question: "Which English Alphabet is in the image?",
+    image: "https://www.mentalup.co/img/blog/concentration-test-4.jpg",
+    correct_answer: "M",
+    incorrect_answers: ["N", "S", "K"]
+  },
+    {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "old",
+    question: "How many differences are there in the given image?",
+    image: "https://img.jagranjosh.com/images/2023/November/3112023/spot-3-differences-in-pug-pictures.webp",
+    correct_answer: "3",
+    incorrect_answers: ["1", "0", "4"]
+  },
+    {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "old",
+    question: "Which is the odd one out in the image?",
+    image: "https://cdn1.vectorstock.com/i/1000x1000/94/65/find-odd-one-out-game-for-kids-worksheet-visual-vector-31769465.jpg",
+    correct_answer: "3",
+    incorrect_answers: ["1", "2", "4"]
+  },
+  {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "old",
+    question: "Solve?",
+    image: "https://www.smartbrainpuzzles.com/wp-content/uploads/2020/12/projection-puzzles-fb-version.jpg",
+    correct_answer: "D",
+    incorrect_answers: ["A", "B", "C"]
+  },
+//
+
+{
+    category: "Attention",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "How many rope hangers are there in the image?",
+    image: "https://wl-brightside.cf.tsp.li/resize/728x/jpg/ed9/660/53980d548cb101007423d751b0.jpg",
+    correct_answer: "4",
+    incorrect_answers: ["2", "1", "3"]
+  },
+  {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Which English Alphabet is in the image?",
+    image: "https://www.mentalup.co/img/blog/concentration-test-4.jpg",
+    correct_answer: "M",
+    incorrect_answers: ["N", "S", "K"]
+  },
+    {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "How many differences are there in the given image?",
+    image: "https://img.jagranjosh.com/images/2023/November/3112023/spot-3-differences-in-pug-pictures.webp",
+    correct_answer: "3",
+    incorrect_answers: ["1", "0", "4"]
+  },
+    {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Which is the odd one out in the image?",
+    image: "https://cdn1.vectorstock.com/i/1000x1000/94/65/find-odd-one-out-game-for-kids-worksheet-visual-vector-31769465.jpg",
+    correct_answer: "3",
+    incorrect_answers: ["1", "2", "4"]
+  },
+  {
+    category: "Attention",
+    type: "multiple",
+    difficulty: "adult/teen",
+    question: "Solve?",
+    image: "https://i.pinimg.com/originals/39/61/b0/3961b0f15b5c9cd7a1949fd37e918c68.png",
+    correct_answer: "14",
+    incorrect_answers: ["12", "18", "10"]
   }
 ];
 
