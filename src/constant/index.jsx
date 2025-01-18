@@ -13,7 +13,7 @@ export const Types = [
   },
   {
     id: 12,
-    name: "Reaction speed"
+    name: "Vocabulary"
   }
 ];
 
@@ -413,7 +413,129 @@ export const Question = [
     image: "https://i.pinimg.com/originals/39/61/b0/3961b0f15b5c9cd7a1949fd37e918c68.png",
     correct_answer: "14",
     incorrect_answers: ["12", "18", "10"]
-  }
+  },
+  
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "toddler",
+      question: "Which is a color?",
+      correct_answer: "red",
+      incorrect_answers: ["banana", "dog", "car"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "toddler",
+      question: "Which is an animal?",
+      correct_answer: "cat",
+      incorrect_answers: ["tree", "sun", "sky"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "toddler",
+      question: "Which is a fruit?",
+      correct_answer: "apple",
+      incorrect_answers: ["carrot", "bread", "cheese"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "toddler",
+      question: "Which is a vegetable?",
+      correct_answer: "carrot",
+      incorrect_answers: ["chicken", "cake", "pasta"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "toddler",
+      question: "Which is a shape?",
+      correct_answer: "circle",
+      incorrect_answers: ["pyramid", "house", "tree"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "adult/teen",
+      question: "Which is a synonym for 'happy'?",
+      correct_answer: "joyful",
+      incorrect_answers: ["sad", "angry", "tired"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "adult/teen",
+      question: "Which is the opposite of 'hot'?",
+      correct_answer: "cold",
+      incorrect_answers: ["warm", "cool", "humid"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "adult/teen",
+      question: "Which is a synonym for 'beautiful'?",
+      correct_answer: "gorgeous",
+      incorrect_answers: ["ugly", "strange", "plain"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "adult/teen",
+      question: "Which word is related to books?",
+      correct_answer: "library",
+      incorrect_answers: ["kitchen", "guitar", "car"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "adult/teen",
+      question: "Which is a synonym for 'quick'?",
+      correct_answer: "fast",
+      incorrect_answers: ["slow", "lazy", "tired"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "old",
+      question: "Which is a synonym for 'courage'?",
+      correct_answer: "bravery",
+      incorrect_answers: ["fear", "timid", "weakness"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "old",
+      question: "Which is an antonym of 'light'?",
+      correct_answer: "heavy",
+      incorrect_answers: ["bright", "soft", "fragile"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "old",
+      question: "Which word means 'to grow stronger'?",
+      correct_answer: "strengthen",
+      incorrect_answers: ["weaken", "deteriorate", "collapse"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "old",
+      question: "Which is a synonym for 'wise'?",
+      correct_answer: "intelligent",
+      incorrect_answers: ["stupid", "naive", "ignorant"]
+    },
+    {
+      category: "Vocabulary",
+      type: "multiple",
+      difficulty: "old",
+      question: "Which is a word for 'unexpected'?",
+      correct_answer: "surprise",
+      incorrect_answers: ["plan", "routine", "predictable"]
+    }
+  
 ];
 
 export const Level = ["toddler", "old", "adult/teen"];

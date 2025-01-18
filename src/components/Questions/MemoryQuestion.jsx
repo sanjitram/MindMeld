@@ -7,13 +7,13 @@ function MemoryQuestion({ id, singleQuestion, handleClick }) {
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
-    // Show words for 5 seconds before displaying options
+    // Show words for 3 seconds before displaying options
     const timer = setTimeout(() => {
       setShowWords(false);
       setOptions(
         incorrect_answers.concat(correct_answer).sort(() => Math.random() - 0.5)
       );
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [incorrect_answers, correct_answer]);

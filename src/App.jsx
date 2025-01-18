@@ -39,7 +39,7 @@ function App() {
   const memoryScores = scoreHistory.filter(score => score.category === "Memory");
   const attentionScores = scoreHistory.filter(score => score.category === "Attention");
   const problemSolvingScores = scoreHistory.filter(score => score.category === "Problem Solving");
-  const reactionSpeedScores = scoreHistory.filter(score => score.category === "Reaction speed");
+  const reactionSpeedScores = scoreHistory.filter(score => score.category === "Vocabulary");
 
   // Calculate averages for each category
   const calculateAverage = (scores) => {
@@ -85,7 +85,7 @@ function App() {
         fill: true,
       },
       {
-        label: 'Reaction Speed Tests',
+        label: 'Vocabulary',
         data: reactionSpeedScores.slice(-10).map(score => score.score),
         borderColor: '#8B5CF6',
         backgroundColor: 'rgba(139, 92, 246, 0.5)',
