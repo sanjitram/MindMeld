@@ -30,6 +30,7 @@ To get started with *MindMeld*, you can access the app through the website:
 
 3. *Start Tracking*:
    Once logged in, you can begin using the app's cognitive performance tests. View your results, track your progress, and receive personalized feedback and improvement tips based on your performance.
+   
 
 ## Usage
 
