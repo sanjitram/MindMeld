@@ -1,6 +1,6 @@
 # MindMeld – Cognitive Performance Tracker
 
-*MindMeld* is a web application designed to track and improve cognitive performance, focusing on mental acuity, memory, attention, and problem-solving abilities. This app provides users with a variety of cognitive exercises, allows them to track their performance over time, and gives personalized feedback and improvement recommendations.
+*MindMeld* is a web application designed to track and improve cognitive performance, focusing on mental acuity, memory, attention, and problem-solving abilities. This app provides users with a variety of cognitive exercises, allows them to track their performance over time, and gives personalized feedback and recommendations.
 
 ## Features
 
