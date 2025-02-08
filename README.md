@@ -73,6 +73,7 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 - *Firebase*: Used for user authentication and data storage.
 - *Chart.js*: Used for visualizing cognitive performance data.
 - *React*: Frontend framework for building the user interface.
+  
 
 ---
 
